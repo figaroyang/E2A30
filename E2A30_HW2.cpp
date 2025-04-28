@@ -82,9 +82,9 @@ int main(void)
             scanf("%d", &n);
             if (n >= 1 && n <= 9)
             {
-                for (z = 1; z <= n; ++z)
+                for (z = 1; z <= n; z--)
                 {
-                    for (y = 1; y <= z; ++y)
+                    for (y = 1; y <= z; y++)
                     {
                         printf("%d", y);
                     }
@@ -109,7 +109,7 @@ int main(void)
 
             if (num < 1 || num > 9)
             {
-                printf("\n乘法表 (%dx%d)", num, num);
+                printf("\n乘法表 (%dx%d)\n\n", num, num);
             }
             for (int i = 1; i <= num; i++)
             {
@@ -124,8 +124,35 @@ int main(void)
 
         case 'c':
         case 'C':
-            
-        
-        
+        int tt;
+            while (1)
+            {
+                printf("Continue? (y/n)\n");
+                fflush(stdin);
+                scanf("%c", &tt);
+                if (tt == 'Y' || tt == 'y')
+                {
+                    system("PAUSE");
+                    system("cls");
+                    break;
+                }
+                else if (tt == 'N' || tt == 'n')
+                {
+                    printf("end\n");
+                    system("PAUSE");
+                    return 0;
+                }
+                else
+                {
+                    printf("輸入錯誤，重新輸入\n");
+                }
+            }
+            break;
+        default:
+            printf("輸入錯誤");
+            system("PAUSE");
+            system("cls");
+        }
     }
 }
+
