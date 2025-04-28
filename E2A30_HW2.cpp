@@ -77,59 +77,55 @@ int main(void)
         case 'a':
 
             system("cls");
-            time = 0;
-            k = 0;
-            j = 0;
-            while (1)
+            printf("請輸入字元(a~n):");
+            fflush(stdin);
+            scanf("%d", &n);
+            if (n >= 1 && n <= 9)
             {
-                fflush(stdin);
-                printf("請輸入一個字元(a-n): \n");
-                scanf("%c", &ch2);
-                time = ch2 - 'a';
-                if (ch2 >= 'a' && ch2 <= 'n')
+                for (z = 1; z <= n; ++z)
                 {
-                    while (k <= time)
+                    for (y = 1; y <= z; ++y)
                     {
-                        j = 'a';
-                        while (j <= ch2)
-                        {
-                            printf("%c", j);
-                            j++;
-                        }
-                        printf("\n");
-                        k++;
+                        printf("%d", y);
                     }
-                    break;
+                    printf("\n");
                 }
-                else
+                break;
+            }
+            else
+            {
+                printf("輸入錯誤，請重新輸入\n");
+            }
+
+            system("pause");
+            system("cls");
+            break;
+
+        case 'B':
+        case 'b':
+            int num;
+            printf("輸入整數1~9:", num);
+            scanf("%d", &num);
+
+            if (num < 1 || num > 9)
+            {
+                printf("\n乘法表 (%dx%d)", num, num);
+            }
+            for (int i = 1; i <= num; i++)
+            {
+                for (int j = 1; j <= num; j++)
                 {
-                    printf("輸入錯誤，請重新輸入\n");
+                    printf("%4d", i + j);
                 }
             }
             system("pause");
             system("cls");
             break;
 
+        case 'c':
+        case 'C':
             
-            case 'B':
-            case 'b':
-            printf("輸入整數1~9:%d",n);
-            scanf("%d",&n);
-
-            if(n<1||n>9)
-            {
-                printf("\n乘法表 (%dx%d)",n,n);
-            }
-            for(int i=1; i<=n ; i++)
-            {
-                for(int j=1 ;j<=n ;j++)
-                {
-                    printf("%4d",i+j);
-                }
-            }
-
-            
-
-        }
+        
+        
     }
 }
